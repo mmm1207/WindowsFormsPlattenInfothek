@@ -28,36 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pnlControl = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblPlattenInfothek = new System.Windows.Forms.Label();
+            this.btnAllePlatten = new System.Windows.Forms.Button();
+            this.lblAnzahlSongs = new System.Windows.Forms.Label();
+            this.lblErscheinungsdatum = new System.Windows.Forms.Label();
+            this.lblGerne = new System.Windows.Forms.Label();
+            this.lblTitel = new System.Windows.Forms.Label();
+            this.lblPlattenInterpret = new System.Windows.Forms.Label();
+            this.lblPlattenID = new System.Windows.Forms.Label();
+            this.lblHerkunft = new System.Windows.Forms.Label();
+            this.lblInterpret = new System.Windows.Forms.Label();
+            this.lblInterpretenID = new System.Windows.Forms.Label();
+            this.btnPlatteÄndern = new System.Windows.Forms.Button();
+            this.btnPlatteHinzufügen = new System.Windows.Forms.Button();
+            this.btnInterpretÄndern = new System.Windows.Forms.Button();
+            this.btnInterpretHinzufügen = new System.Windows.Forms.Button();
+            this.txtInterpret = new System.Windows.Forms.TextBox();
+            this.txtHerkunft = new System.Windows.Forms.TextBox();
+            this.txtAnzahlSongs = new System.Windows.Forms.TextBox();
+            this.txtErscheinungsdatum = new System.Windows.Forms.TextBox();
+            this.txtGerne = new System.Windows.Forms.TextBox();
+            this.txtTitel = new System.Windows.Forms.TextBox();
+            this.txtPlattenInterpret = new System.Windows.Forms.TextBox();
+            this.txtInterpretenID = new System.Windows.Forms.TextBox();
+            this.txtPlattenID = new System.Windows.Forms.TextBox();
+            this.lblGridInterpreten = new System.Windows.Forms.Label();
             this.gridInterpreten = new System.Windows.Forms.DataGridView();
             this.gridPlatten = new System.Windows.Forms.DataGridView();
             this.pnlSeperation = new System.Windows.Forms.Panel();
-            this.lblGridInterpreten = new System.Windows.Forms.Label();
             this.lblGridPlatten = new System.Windows.Forms.Label();
-            this.txtPlattenID = new System.Windows.Forms.TextBox();
-            this.txtInterpretenID = new System.Windows.Forms.TextBox();
-            this.txtPlattenInterpret = new System.Windows.Forms.TextBox();
-            this.txtTitel = new System.Windows.Forms.TextBox();
-            this.txtGerne = new System.Windows.Forms.TextBox();
-            this.txtErscheinungsdatum = new System.Windows.Forms.TextBox();
-            this.txtAnzahlSongs = new System.Windows.Forms.TextBox();
-            this.txtHerkunft = new System.Windows.Forms.TextBox();
-            this.txtInterpret = new System.Windows.Forms.TextBox();
-            this.btnInterpretHinzufügen = new System.Windows.Forms.Button();
-            this.btnInterpretÄndern = new System.Windows.Forms.Button();
-            this.btnPlatteHinzufügen = new System.Windows.Forms.Button();
-            this.btnPlatteÄndern = new System.Windows.Forms.Button();
-            this.lblInterpretenID = new System.Windows.Forms.Label();
-            this.lblInterpret = new System.Windows.Forms.Label();
-            this.lblHerkunft = new System.Windows.Forms.Label();
-            this.lblPlattenID = new System.Windows.Forms.Label();
-            this.lblPlattenInterpret = new System.Windows.Forms.Label();
-            this.lblTitel = new System.Windows.Forms.Label();
-            this.lblGerne = new System.Windows.Forms.Label();
-            this.lblErscheinungsdatum = new System.Windows.Forms.Label();
-            this.lblAnzahlSongs = new System.Windows.Forms.Label();
-            this.btnAllePlatten = new System.Windows.Forms.Button();
             this.pnlControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridInterpreten)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPlatten)).BeginInit();
             this.pnlSeperation.SuspendLayout();
@@ -65,6 +69,8 @@
             // 
             // pnlControl
             // 
+            this.pnlControl.Controls.Add(this.pictureBox1);
+            this.pnlControl.Controls.Add(this.lblPlattenInfothek);
             this.pnlControl.Controls.Add(this.btnAllePlatten);
             this.pnlControl.Controls.Add(this.lblAnzahlSongs);
             this.pnlControl.Controls.Add(this.lblErscheinungsdatum);
@@ -92,140 +98,131 @@
             this.pnlControl.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlControl.Location = new System.Drawing.Point(0, 0);
             this.pnlControl.Name = "pnlControl";
-            this.pnlControl.Size = new System.Drawing.Size(946, 163);
+            this.pnlControl.Size = new System.Drawing.Size(946, 217);
             this.pnlControl.TabIndex = 4;
             // 
-            // gridInterpreten
+            // pictureBox1
             // 
-            this.gridInterpreten.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridInterpreten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridInterpreten.Location = new System.Drawing.Point(0, 169);
-            this.gridInterpreten.Name = "gridInterpreten";
-            this.gridInterpreten.Size = new System.Drawing.Size(946, 185);
-            this.gridInterpreten.TabIndex = 6;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.ImageLocation = "";
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(332, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 49);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
             // 
-            // gridPlatten
+            // lblPlattenInfothek
             // 
-            this.gridPlatten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridPlatten.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridPlatten.Location = new System.Drawing.Point(0, 410);
-            this.gridPlatten.Name = "gridPlatten";
-            this.gridPlatten.Size = new System.Drawing.Size(946, 185);
-            this.gridPlatten.TabIndex = 7;
+            this.lblPlattenInfothek.AutoSize = true;
+            this.lblPlattenInfothek.Font = new System.Drawing.Font("MV Boli", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlattenInfothek.Location = new System.Drawing.Point(12, 15);
+            this.lblPlattenInfothek.Name = "lblPlattenInfothek";
+            this.lblPlattenInfothek.Size = new System.Drawing.Size(327, 49);
+            this.lblPlattenInfothek.TabIndex = 28;
+            this.lblPlattenInfothek.Text = "Platten Infothek";
             // 
-            // pnlSeperation
+            // btnAllePlatten
             // 
-            this.pnlSeperation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSeperation.Controls.Add(this.lblGridPlatten);
-            this.pnlSeperation.Location = new System.Drawing.Point(0, 360);
-            this.pnlSeperation.Name = "pnlSeperation";
-            this.pnlSeperation.Size = new System.Drawing.Size(946, 44);
-            this.pnlSeperation.TabIndex = 8;
+            this.btnAllePlatten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAllePlatten.Location = new System.Drawing.Point(714, 136);
+            this.btnAllePlatten.Name = "btnAllePlatten";
+            this.btnAllePlatten.Size = new System.Drawing.Size(220, 23);
+            this.btnAllePlatten.TabIndex = 27;
+            this.btnAllePlatten.Text = "Alle Platten anzeigen";
+            this.btnAllePlatten.UseVisualStyleBackColor = true;
             // 
-            // lblGridInterpreten
+            // lblAnzahlSongs
             // 
-            this.lblGridInterpreten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGridInterpreten.AutoSize = true;
-            this.lblGridInterpreten.Location = new System.Drawing.Point(876, 150);
-            this.lblGridInterpreten.Name = "lblGridInterpreten";
-            this.lblGridInterpreten.Size = new System.Drawing.Size(58, 13);
-            this.lblGridInterpreten.TabIndex = 4;
-            this.lblGridInterpreten.Text = "Interpreten";
+            this.lblAnzahlSongs.AutoSize = true;
+            this.lblAnzahlSongs.Location = new System.Drawing.Point(575, 91);
+            this.lblAnzahlSongs.Name = "lblAnzahlSongs";
+            this.lblAnzahlSongs.Size = new System.Drawing.Size(72, 13);
+            this.lblAnzahlSongs.TabIndex = 26;
+            this.lblAnzahlSongs.Text = "Anzahl Songs";
             // 
-            // lblGridPlatten
+            // lblErscheinungsdatum
             // 
-            this.lblGridPlatten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblGridPlatten.AutoSize = true;
-            this.lblGridPlatten.Location = new System.Drawing.Point(894, 31);
-            this.lblGridPlatten.Name = "lblGridPlatten";
-            this.lblGridPlatten.Size = new System.Drawing.Size(40, 13);
-            this.lblGridPlatten.TabIndex = 0;
-            this.lblGridPlatten.Text = "Platten";
+            this.lblErscheinungsdatum.AutoSize = true;
+            this.lblErscheinungsdatum.Location = new System.Drawing.Point(444, 91);
+            this.lblErscheinungsdatum.Name = "lblErscheinungsdatum";
+            this.lblErscheinungsdatum.Size = new System.Drawing.Size(100, 13);
+            this.lblErscheinungsdatum.TabIndex = 25;
+            this.lblErscheinungsdatum.Text = "Erscheinungsdatum";
             // 
-            // txtPlattenID
+            // lblGerne
             // 
-            this.txtPlattenID.Location = new System.Drawing.Point(12, 107);
-            this.txtPlattenID.Name = "txtPlattenID";
-            this.txtPlattenID.Size = new System.Drawing.Size(36, 20);
-            this.txtPlattenID.TabIndex = 5;
+            this.lblGerne.AutoSize = true;
+            this.lblGerne.Location = new System.Drawing.Point(313, 91);
+            this.lblGerne.Name = "lblGerne";
+            this.lblGerne.Size = new System.Drawing.Size(36, 13);
+            this.lblGerne.TabIndex = 24;
+            this.lblGerne.Text = "Gerne";
             // 
-            // txtInterpretenID
+            // lblTitel
             // 
-            this.txtInterpretenID.Location = new System.Drawing.Point(405, 44);
-            this.txtInterpretenID.Name = "txtInterpretenID";
-            this.txtInterpretenID.Size = new System.Drawing.Size(36, 20);
-            this.txtInterpretenID.TabIndex = 6;
+            this.lblTitel.AutoSize = true;
+            this.lblTitel.Location = new System.Drawing.Point(182, 91);
+            this.lblTitel.Name = "lblTitel";
+            this.lblTitel.Size = new System.Drawing.Size(27, 13);
+            this.lblTitel.TabIndex = 23;
+            this.lblTitel.Text = "Titel";
             // 
-            // txtPlattenInterpret
+            // lblPlattenInterpret
             // 
-            this.txtPlattenInterpret.Location = new System.Drawing.Point(54, 107);
-            this.txtPlattenInterpret.Name = "txtPlattenInterpret";
-            this.txtPlattenInterpret.Size = new System.Drawing.Size(125, 20);
-            this.txtPlattenInterpret.TabIndex = 7;
+            this.lblPlattenInterpret.AutoSize = true;
+            this.lblPlattenInterpret.Location = new System.Drawing.Point(51, 91);
+            this.lblPlattenInterpret.Name = "lblPlattenInterpret";
+            this.lblPlattenInterpret.Size = new System.Drawing.Size(46, 13);
+            this.lblPlattenInterpret.TabIndex = 22;
+            this.lblPlattenInterpret.Text = "Interpret";
             // 
-            // txtTitel
+            // lblPlattenID
             // 
-            this.txtTitel.Location = new System.Drawing.Point(185, 107);
-            this.txtTitel.Name = "txtTitel";
-            this.txtTitel.Size = new System.Drawing.Size(125, 20);
-            this.txtTitel.TabIndex = 8;
+            this.lblPlattenID.AutoSize = true;
+            this.lblPlattenID.Location = new System.Drawing.Point(9, 91);
+            this.lblPlattenID.Name = "lblPlattenID";
+            this.lblPlattenID.Size = new System.Drawing.Size(18, 13);
+            this.lblPlattenID.TabIndex = 21;
+            this.lblPlattenID.Text = "ID";
             // 
-            // txtGerne
+            // lblHerkunft
             // 
-            this.txtGerne.Location = new System.Drawing.Point(316, 107);
-            this.txtGerne.Name = "txtGerne";
-            this.txtGerne.Size = new System.Drawing.Size(125, 20);
-            this.txtGerne.TabIndex = 9;
+            this.lblHerkunft.AutoSize = true;
+            this.lblHerkunft.Location = new System.Drawing.Point(575, 28);
+            this.lblHerkunft.Name = "lblHerkunft";
+            this.lblHerkunft.Size = new System.Drawing.Size(48, 13);
+            this.lblHerkunft.TabIndex = 20;
+            this.lblHerkunft.Text = "Herkunft";
             // 
-            // txtErscheinungsdatum
+            // lblInterpret
             // 
-            this.txtErscheinungsdatum.Location = new System.Drawing.Point(447, 107);
-            this.txtErscheinungsdatum.Name = "txtErscheinungsdatum";
-            this.txtErscheinungsdatum.Size = new System.Drawing.Size(125, 20);
-            this.txtErscheinungsdatum.TabIndex = 10;
+            this.lblInterpret.AutoSize = true;
+            this.lblInterpret.Location = new System.Drawing.Point(444, 28);
+            this.lblInterpret.Name = "lblInterpret";
+            this.lblInterpret.Size = new System.Drawing.Size(46, 13);
+            this.lblInterpret.TabIndex = 19;
+            this.lblInterpret.Text = "Interpret";
             // 
-            // txtAnzahlSongs
+            // lblInterpretenID
             // 
-            this.txtAnzahlSongs.Location = new System.Drawing.Point(578, 107);
-            this.txtAnzahlSongs.Name = "txtAnzahlSongs";
-            this.txtAnzahlSongs.Size = new System.Drawing.Size(125, 20);
-            this.txtAnzahlSongs.TabIndex = 11;
+            this.lblInterpretenID.AutoSize = true;
+            this.lblInterpretenID.Location = new System.Drawing.Point(402, 28);
+            this.lblInterpretenID.Name = "lblInterpretenID";
+            this.lblInterpretenID.Size = new System.Drawing.Size(18, 13);
+            this.lblInterpretenID.TabIndex = 18;
+            this.lblInterpretenID.Text = "ID";
             // 
-            // txtHerkunft
+            // btnPlatteÄndern
             // 
-            this.txtHerkunft.Location = new System.Drawing.Point(578, 44);
-            this.txtHerkunft.Name = "txtHerkunft";
-            this.txtHerkunft.Size = new System.Drawing.Size(125, 20);
-            this.txtHerkunft.TabIndex = 12;
-            // 
-            // txtInterpret
-            // 
-            this.txtInterpret.Location = new System.Drawing.Point(447, 44);
-            this.txtInterpret.Name = "txtInterpret";
-            this.txtInterpret.Size = new System.Drawing.Size(125, 20);
-            this.txtInterpret.TabIndex = 13;
-            // 
-            // btnInterpretHinzufügen
-            // 
-            this.btnInterpretHinzufügen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInterpretHinzufügen.Location = new System.Drawing.Point(714, 12);
-            this.btnInterpretHinzufügen.Name = "btnInterpretHinzufügen";
-            this.btnInterpretHinzufügen.Size = new System.Drawing.Size(220, 23);
-            this.btnInterpretHinzufügen.TabIndex = 14;
-            this.btnInterpretHinzufügen.Text = "Interpret hinzufügen";
-            this.btnInterpretHinzufügen.UseVisualStyleBackColor = true;
-            // 
-            // btnInterpretÄndern
-            // 
-            this.btnInterpretÄndern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnInterpretÄndern.Location = new System.Drawing.Point(714, 43);
-            this.btnInterpretÄndern.Name = "btnInterpretÄndern";
-            this.btnInterpretÄndern.Size = new System.Drawing.Size(220, 23);
-            this.btnInterpretÄndern.TabIndex = 15;
-            this.btnInterpretÄndern.Text = "Interpret ändern";
-            this.btnInterpretÄndern.UseVisualStyleBackColor = true;
+            this.btnPlatteÄndern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPlatteÄndern.Location = new System.Drawing.Point(714, 105);
+            this.btnPlatteÄndern.Name = "btnPlatteÄndern";
+            this.btnPlatteÄndern.Size = new System.Drawing.Size(220, 23);
+            this.btnPlatteÄndern.TabIndex = 17;
+            this.btnPlatteÄndern.Text = "Platte ändern";
+            this.btnPlatteÄndern.UseVisualStyleBackColor = true;
             // 
             // btnPlatteHinzufügen
             // 
@@ -237,120 +234,157 @@
             this.btnPlatteHinzufügen.Text = "Platte hinzufügen";
             this.btnPlatteHinzufügen.UseVisualStyleBackColor = true;
             // 
-            // btnPlatteÄndern
+            // btnInterpretÄndern
             // 
-            this.btnPlatteÄndern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPlatteÄndern.Location = new System.Drawing.Point(714, 106);
-            this.btnPlatteÄndern.Name = "btnPlatteÄndern";
-            this.btnPlatteÄndern.Size = new System.Drawing.Size(220, 23);
-            this.btnPlatteÄndern.TabIndex = 17;
-            this.btnPlatteÄndern.Text = "Platte ändern";
-            this.btnPlatteÄndern.UseVisualStyleBackColor = true;
+            this.btnInterpretÄndern.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInterpretÄndern.Location = new System.Drawing.Point(714, 43);
+            this.btnInterpretÄndern.Name = "btnInterpretÄndern";
+            this.btnInterpretÄndern.Size = new System.Drawing.Size(220, 23);
+            this.btnInterpretÄndern.TabIndex = 15;
+            this.btnInterpretÄndern.Text = "Interpret ändern";
+            this.btnInterpretÄndern.UseVisualStyleBackColor = true;
+            this.btnInterpretÄndern.Click += new System.EventHandler(this.btnInterpretÄndern_Click);
             // 
-            // lblInterpretenID
+            // btnInterpretHinzufügen
             // 
-            this.lblInterpretenID.AutoSize = true;
-            this.lblInterpretenID.Location = new System.Drawing.Point(402, 28);
-            this.lblInterpretenID.Name = "lblInterpretenID";
-            this.lblInterpretenID.Size = new System.Drawing.Size(18, 13);
-            this.lblInterpretenID.TabIndex = 18;
-            this.lblInterpretenID.Text = "ID";
+            this.btnInterpretHinzufügen.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInterpretHinzufügen.Location = new System.Drawing.Point(714, 12);
+            this.btnInterpretHinzufügen.Name = "btnInterpretHinzufügen";
+            this.btnInterpretHinzufügen.Size = new System.Drawing.Size(220, 23);
+            this.btnInterpretHinzufügen.TabIndex = 14;
+            this.btnInterpretHinzufügen.Text = "Interpret hinzufügen";
+            this.btnInterpretHinzufügen.UseVisualStyleBackColor = true;
+            this.btnInterpretHinzufügen.Click += new System.EventHandler(this.btnInterpretHinzufügen_Click);
             // 
-            // lblInterpret
+            // txtInterpret
             // 
-            this.lblInterpret.AutoSize = true;
-            this.lblInterpret.Location = new System.Drawing.Point(444, 28);
-            this.lblInterpret.Name = "lblInterpret";
-            this.lblInterpret.Size = new System.Drawing.Size(46, 13);
-            this.lblInterpret.TabIndex = 19;
-            this.lblInterpret.Text = "Interpret";
+            this.txtInterpret.Location = new System.Drawing.Point(447, 44);
+            this.txtInterpret.Name = "txtInterpret";
+            this.txtInterpret.Size = new System.Drawing.Size(125, 20);
+            this.txtInterpret.TabIndex = 13;
             // 
-            // lblHerkunft
+            // txtHerkunft
             // 
-            this.lblHerkunft.AutoSize = true;
-            this.lblHerkunft.Location = new System.Drawing.Point(575, 28);
-            this.lblHerkunft.Name = "lblHerkunft";
-            this.lblHerkunft.Size = new System.Drawing.Size(48, 13);
-            this.lblHerkunft.TabIndex = 20;
-            this.lblHerkunft.Text = "Herkunft";
+            this.txtHerkunft.Location = new System.Drawing.Point(578, 44);
+            this.txtHerkunft.Name = "txtHerkunft";
+            this.txtHerkunft.Size = new System.Drawing.Size(125, 20);
+            this.txtHerkunft.TabIndex = 12;
             // 
-            // lblPlattenID
+            // txtAnzahlSongs
             // 
-            this.lblPlattenID.AutoSize = true;
-            this.lblPlattenID.Location = new System.Drawing.Point(9, 91);
-            this.lblPlattenID.Name = "lblPlattenID";
-            this.lblPlattenID.Size = new System.Drawing.Size(18, 13);
-            this.lblPlattenID.TabIndex = 21;
-            this.lblPlattenID.Text = "ID";
+            this.txtAnzahlSongs.Location = new System.Drawing.Point(578, 107);
+            this.txtAnzahlSongs.Name = "txtAnzahlSongs";
+            this.txtAnzahlSongs.Size = new System.Drawing.Size(125, 20);
+            this.txtAnzahlSongs.TabIndex = 11;
             // 
-            // lblPlattenInterpret
+            // txtErscheinungsdatum
             // 
-            this.lblPlattenInterpret.AutoSize = true;
-            this.lblPlattenInterpret.Location = new System.Drawing.Point(51, 91);
-            this.lblPlattenInterpret.Name = "lblPlattenInterpret";
-            this.lblPlattenInterpret.Size = new System.Drawing.Size(46, 13);
-            this.lblPlattenInterpret.TabIndex = 22;
-            this.lblPlattenInterpret.Text = "Interpret";
+            this.txtErscheinungsdatum.Location = new System.Drawing.Point(447, 107);
+            this.txtErscheinungsdatum.Name = "txtErscheinungsdatum";
+            this.txtErscheinungsdatum.Size = new System.Drawing.Size(125, 20);
+            this.txtErscheinungsdatum.TabIndex = 10;
             // 
-            // lblTitel
+            // txtGerne
             // 
-            this.lblTitel.AutoSize = true;
-            this.lblTitel.Location = new System.Drawing.Point(182, 91);
-            this.lblTitel.Name = "lblTitel";
-            this.lblTitel.Size = new System.Drawing.Size(27, 13);
-            this.lblTitel.TabIndex = 23;
-            this.lblTitel.Text = "Titel";
+            this.txtGerne.Location = new System.Drawing.Point(316, 107);
+            this.txtGerne.Name = "txtGerne";
+            this.txtGerne.Size = new System.Drawing.Size(125, 20);
+            this.txtGerne.TabIndex = 9;
             // 
-            // lblGerne
+            // txtTitel
             // 
-            this.lblGerne.AutoSize = true;
-            this.lblGerne.Location = new System.Drawing.Point(313, 91);
-            this.lblGerne.Name = "lblGerne";
-            this.lblGerne.Size = new System.Drawing.Size(36, 13);
-            this.lblGerne.TabIndex = 24;
-            this.lblGerne.Text = "Gerne";
+            this.txtTitel.Location = new System.Drawing.Point(185, 107);
+            this.txtTitel.Name = "txtTitel";
+            this.txtTitel.Size = new System.Drawing.Size(125, 20);
+            this.txtTitel.TabIndex = 8;
             // 
-            // lblErscheinungsdatum
+            // txtPlattenInterpret
             // 
-            this.lblErscheinungsdatum.AutoSize = true;
-            this.lblErscheinungsdatum.Location = new System.Drawing.Point(444, 91);
-            this.lblErscheinungsdatum.Name = "lblErscheinungsdatum";
-            this.lblErscheinungsdatum.Size = new System.Drawing.Size(100, 13);
-            this.lblErscheinungsdatum.TabIndex = 25;
-            this.lblErscheinungsdatum.Text = "Erscheinungsdatum";
+            this.txtPlattenInterpret.Location = new System.Drawing.Point(54, 107);
+            this.txtPlattenInterpret.Name = "txtPlattenInterpret";
+            this.txtPlattenInterpret.Size = new System.Drawing.Size(125, 20);
+            this.txtPlattenInterpret.TabIndex = 7;
             // 
-            // lblAnzahlSongs
+            // txtInterpretenID
             // 
-            this.lblAnzahlSongs.AutoSize = true;
-            this.lblAnzahlSongs.Location = new System.Drawing.Point(575, 91);
-            this.lblAnzahlSongs.Name = "lblAnzahlSongs";
-            this.lblAnzahlSongs.Size = new System.Drawing.Size(72, 13);
-            this.lblAnzahlSongs.TabIndex = 26;
-            this.lblAnzahlSongs.Text = "Anzahl Songs";
+            this.txtInterpretenID.Location = new System.Drawing.Point(405, 44);
+            this.txtInterpretenID.Name = "txtInterpretenID";
+            this.txtInterpretenID.Size = new System.Drawing.Size(36, 20);
+            this.txtInterpretenID.TabIndex = 6;
             // 
-            // btnAllePlatten
+            // txtPlattenID
             // 
-            this.btnAllePlatten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAllePlatten.Location = new System.Drawing.Point(12, 12);
-            this.btnAllePlatten.Name = "btnAllePlatten";
-            this.btnAllePlatten.Size = new System.Drawing.Size(85, 44);
-            this.btnAllePlatten.TabIndex = 27;
-            this.btnAllePlatten.Text = "Alle Platten anzeigen";
-            this.btnAllePlatten.UseVisualStyleBackColor = true;
+            this.txtPlattenID.Location = new System.Drawing.Point(12, 107);
+            this.txtPlattenID.Name = "txtPlattenID";
+            this.txtPlattenID.Size = new System.Drawing.Size(36, 20);
+            this.txtPlattenID.TabIndex = 5;
+            // 
+            // lblGridInterpreten
+            // 
+            this.lblGridInterpreten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGridInterpreten.AutoSize = true;
+            this.lblGridInterpreten.Location = new System.Drawing.Point(876, 204);
+            this.lblGridInterpreten.Name = "lblGridInterpreten";
+            this.lblGridInterpreten.Size = new System.Drawing.Size(58, 13);
+            this.lblGridInterpreten.TabIndex = 4;
+            this.lblGridInterpreten.Text = "Interpreten";
+            // 
+            // gridInterpreten
+            // 
+            this.gridInterpreten.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridInterpreten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridInterpreten.Location = new System.Drawing.Point(0, 220);
+            this.gridInterpreten.Name = "gridInterpreten";
+            this.gridInterpreten.Size = new System.Drawing.Size(946, 185);
+            this.gridInterpreten.TabIndex = 6;
+            this.gridInterpreten.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridInterpreten_CellClick);
+            // 
+            // gridPlatten
+            // 
+            this.gridPlatten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridPlatten.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridPlatten.Location = new System.Drawing.Point(0, 461);
+            this.gridPlatten.Name = "gridPlatten";
+            this.gridPlatten.Size = new System.Drawing.Size(946, 185);
+            this.gridPlatten.TabIndex = 7;
+            this.gridPlatten.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gridPlatten_CellClick);
+            // 
+            // pnlSeperation
+            // 
+            this.pnlSeperation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlSeperation.Controls.Add(this.lblGridPlatten);
+            this.pnlSeperation.Location = new System.Drawing.Point(0, 411);
+            this.pnlSeperation.Name = "pnlSeperation";
+            this.pnlSeperation.Size = new System.Drawing.Size(946, 44);
+            this.pnlSeperation.TabIndex = 8;
+            // 
+            // lblGridPlatten
+            // 
+            this.lblGridPlatten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblGridPlatten.AutoSize = true;
+            this.lblGridPlatten.Location = new System.Drawing.Point(894, 31);
+            this.lblGridPlatten.Name = "lblGridPlatten";
+            this.lblGridPlatten.Size = new System.Drawing.Size(40, 13);
+            this.lblGridPlatten.TabIndex = 0;
+            this.lblGridPlatten.Text = "Platten";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 595);
+            this.ClientSize = new System.Drawing.Size(946, 646);
             this.Controls.Add(this.pnlSeperation);
             this.Controls.Add(this.gridPlatten);
             this.Controls.Add(this.gridInterpreten);
             this.Controls.Add(this.pnlControl);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.pnlControl.ResumeLayout(false);
             this.pnlControl.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridInterpreten)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridPlatten)).EndInit();
             this.pnlSeperation.ResumeLayout(false);
@@ -389,6 +423,8 @@
         private System.Windows.Forms.TextBox txtInterpretenID;
         private System.Windows.Forms.TextBox txtPlattenID;
         private System.Windows.Forms.Button btnAllePlatten;
+        private System.Windows.Forms.Label lblPlattenInfothek;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
