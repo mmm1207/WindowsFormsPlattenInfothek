@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsPlattenInfothek", "WindowsFormsPlattenInfothek\WindowsFormsPlattenInfothek.csproj", "{F3F338C2-B600-4F74-98A2-D536DA4C5FE6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3F338C2-B600-4F74-98A2-D536DA4C5FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3F338C2-B600-4F74-98A2-D536DA4C5FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3F338C2-B600-4F74-98A2-D536DA4C5FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3F338C2-B600-4F74-98A2-D536DA4C5FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A2D3175A-0300-4224-A30A-37D520985766}
+	EndGlobalSection
+EndGlobal
