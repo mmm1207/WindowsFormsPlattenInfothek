@@ -13,6 +13,7 @@ using System.IO;
 
 namespace WindowsFormsPlattenInfothek
 {
+    [PrimaryKey("InterpretenID")]
     public class Interpret
     {
         public int InterpretenID { get; set; }

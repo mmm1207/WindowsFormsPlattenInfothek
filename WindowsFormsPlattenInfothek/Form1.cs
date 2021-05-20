@@ -17,11 +17,17 @@ namespace WindowsFormsPlattenInfothek
 {
     public partial class Form1 : Form
     {
+        #region Setup
         public Form1()
         {
             InitializeComponent();
             InitializeGrid();
         }
+        private string GetConnectionString()
+        {
+            return ConfigurationManager.ConnectionStrings["mariadb"].ConnectionString;
+        }
+
         private void InitializeGrid()
         {
             gridInterpreten.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -29,19 +35,22 @@ namespace WindowsFormsPlattenInfothek
             gridInterpreten.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridInterpreten.MultiSelect = false;
             gridInterpreten.RowHeadersVisible = false;
-            
+
 
             gridPlatten.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gridPlatten.ReadOnly = true;
             gridPlatten.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             gridPlatten.MultiSelect = false;
             gridPlatten.RowHeadersVisible = false;
-            
+
         }
-        private string GetConnectionString()
+        private void Form1_Load(object sender, EventArgs e)
         {
-            return ConfigurationManager.ConnectionStrings["mariadb"].ConnectionString;
+            InterpretenLaden();
         }
+        #endregion
+
+        #region LadenFunktionen
         private void InterpretenLaden()
         {
             List<Interpret> lstInterpret = new List<Interpret>();
@@ -65,13 +74,60 @@ namespace WindowsFormsPlattenInfothek
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void PlatteLadenFür(int interpretenID)
         {
-            InterpretenLaden();
-            
+            List<Platte> lstPlatte = new List<Platte>();
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(GetConnectionString()))
+                using (IDatabase db = new Database(connection))
+                {
+                    db.Connection.Open();
+                    lstPlatte.Clear();
+                    lstPlatte = db.Fetch<Platte>("Select * from platte where interpretenID = @0 order by erscheinungsdatum", interpretenID);
 
+                    gridPlatten.DataSource = null;
+                    gridPlatten.DataSource = lstPlatte;
+                    gridPlatten.Columns["PlattenID"].Width = 80;
+                    gridPlatten.Columns["InterpretenID"].Width = 80;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+        }
+        private void btnAllePlatten_Click(object sender, EventArgs e)
+        {
+            AllePlattenLaden();
+        }
+        private void AllePlattenLaden()
+        {
+            List<Platte> lstPlatte = new List<Platte>();
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(GetConnectionString()))
+                using (IDatabase db = new Database(connection))
+                {
+                    db.Connection.Open();
+                    lstPlatte = db.Fetch<Platte>("order by platteninterpret, erscheinungsdatum");
+                    gridPlatten.DataSource = null;
+                    gridPlatten.DataSource = lstPlatte;
+                    gridPlatten.Columns["PlattenID"].Width = 80;
+                    gridPlatten.Columns["InterpretenID"].Width = 80;
+
+                    gridPlatten_CellClick(this, new DataGridViewCellEventArgs(0, 0));
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
 
+        #endregion
+
+        #region CellClickFunktionen
         private void gridInterpreten_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (gridInterpreten.SelectedRows.Count > 0)
@@ -89,28 +145,7 @@ namespace WindowsFormsPlattenInfothek
                 }
             }
         }
-        private void PlatteLadenFür(int interpretenID)
-        {
-            List<Platte> lstPlatte = new List<Platte>();
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(GetConnectionString()))
-                using (IDatabase db = new Database(connection))
-                {
-                    db.Connection.Open();
-                    lstPlatte.Clear();
-                    lstPlatte = db.Fetch<Platte>("Select * from platte where interpretenID = @0 order by erscheinungsdatum", interpretenID);
 
-                    gridPlatten.DataSource = null;
-                    gridPlatten.DataSource = lstPlatte;
-                    gridPlatten.Columns["PlattenID"].Width = 80;
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-            }
-        }
 
         private void gridPlatten_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -128,6 +163,9 @@ namespace WindowsFormsPlattenInfothek
                 }
             }
         }
+        #endregion
+
+        #region InterpretHinzufügen
 
         private void btnInterpretHinzufügen_Click(object sender, EventArgs e)
         {
@@ -155,7 +193,9 @@ namespace WindowsFormsPlattenInfothek
                 Debug.WriteLine(ex);
             }
         }
+        #endregion
 
+        #region InterpretÄndern
         private void btnInterpretÄndern_Click(object sender, EventArgs e)
         {
             InterpretÄndern();
@@ -174,6 +214,7 @@ namespace WindowsFormsPlattenInfothek
                     interpret.Herkunft = txtHerkunft.Text;
 
                     int n = db.Update(interpret);
+
                     InterpretenLaden();
                 }
             }
@@ -182,6 +223,114 @@ namespace WindowsFormsPlattenInfothek
                 Debug.WriteLine(ex);
             }
         }
+        #endregion
+
+        #region PlatteHinzufügen
+        private void PlatteHinzufügen()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(GetConnectionString()))
+                using (IDatabase db = new Database(connection))
+                {
+                    db.Connection.Open();
+                    Platte platte = new Platte();
+                    platte.PlattenID = 0;
+                    Interpret interpret = gridInterpreten.CurrentCell.OwningRow.DataBoundItem as Interpret;
+                    if (interpret != null)
+                    {
+                        platte.InterpretenID = interpret.InterpretenID;
+                    }
+                    else
+                    {
+                        platte.InterpretenID = 0;
+
+                    }
+                    platte.PlattenInterpret = txtPlattenInterpret.Text;
+                    platte.Titel = txtTitel.Text;
+                    platte.Gerne = txtGerne.Text;
+                    platte.Erscheinungsdatum = Convert.ToDateTime(txtErscheinungsdatum.Text).Date;
+                    platte.AnzahlSongs = Convert.ToInt32(txtAnzahlSongs.Text);
+
+                    object o = db.Insert(platte);
+
+                    PlatteLadenFür(interpret.InterpretenID);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+        }
+
+        private void btnPlatteHinzufügen_Click(object sender, EventArgs e)
+        {
+            PlatteHinzufügen();
+        }
+        #endregion
+
+        #region PlatteÄndern
+        private void PlatteÄndern()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(GetConnectionString()))
+                using (IDatabase db = new Database(connection))
+                {
+                    db.Connection.Open();
+                    Platte platte = new Platte();
+                    platte.PlattenID = Convert.ToInt32(txtPlattenID.Text);
+                    Interpret interpret = gridInterpreten.CurrentCell.OwningRow.DataBoundItem as Interpret;
+                    if (interpret != null)
+                    {
+                        platte.InterpretenID = interpret.InterpretenID;
+                    }
+                    else
+                    {
+                        platte.InterpretenID = 0;
+                    }
+                    platte.PlattenInterpret = txtPlattenInterpret.Text;
+                    platte.Titel = txtTitel.Text;
+                    platte.Gerne = txtGerne.Text;
+                    platte.Erscheinungsdatum = Convert.ToDateTime(txtErscheinungsdatum.Text).Date;
+                    platte.AnzahlSongs = Convert.ToInt32(txtAnzahlSongs.Text);
+
+                    int n = db.Update(platte);
+
+                    PlatteLadenFür(interpret.InterpretenID);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+        }
+
+        private void btnPlatteÄndern_Click(object sender, EventArgs e)
+        {
+            PlatteÄndern();
+        }
+        #endregion
+
+        #region TextBoxenLeeren
+        private void btnLeerenInterpret_Click(object sender, EventArgs e)
+        {
+            txtInterpretenID.Text = "";
+            txtInterpret.Text = "";
+            txtHerkunft.Text = "";
+        }
+
+        private void btnLeerenPlatte_Click(object sender, EventArgs e)
+        {
+            txtPlattenID.Text = "";
+            txtPlattenInterpret.Text = "";
+            txtTitel.Text = "";
+            txtGerne.Text = "";
+            txtErscheinungsdatum.Text = "";
+            txtAnzahlSongs.Text = "";
+        } 
+        #endregion
     }
 
 
