@@ -332,6 +332,4 @@ namespace WindowsFormsPlattenInfothek
         } 
         #endregion
     }
-
-
 }
